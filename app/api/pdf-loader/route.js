@@ -3,8 +3,12 @@ import { WebPDFLoader } from "@langchain/community/document_loaders/web/pdf";
 import { RecursiveCharacterTextSplitter } from "langchain/text_splitter";
 
 
-const pdfUrl="https://animated-caterpillar-648.convex.cloud/api/storage/d21f6c8f-f411-4c44-b827-f8dc39c4e47c"
+// const pdfUrl="https://animated-caterpillar-648.convex.cloud/api/storage/d21f6c8f-f411-4c44-b827-f8dc39c4e47c"
 export async function GET(req){
+    const reqUrl=req.url;
+    const {searchParams}=new URL(reqUrl);
+    const pdfUrl=searchParams.get('pdfUrl');        //field name hai pdf url jo url mein dikhega
+    console.log(pdfUrl);
     //1. Load the pdf file
     const response=await fetch(pdfUrl);
     const data=await response.blob();
