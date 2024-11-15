@@ -42,7 +42,7 @@ const EditorExtension = ({editor}) => {
         });
         
         const PROMPT="For question :"+selection+" and with the given content as answer,"+
-        "please give appropriate answer in HTML format.The answer content is: "+AllUnformattedAns;
+        "please give appropriate answer in HTML format.Generate only the HTML content for the following question without additional explanations, instructions, or comments.The answer content is: "+AllUnformattedAns;
 
 
         const AiModelResult=await chatSession.sendMessage(PROMPT);
