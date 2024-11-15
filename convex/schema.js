@@ -24,5 +24,11 @@ export default defineSchema({
         vectorField: "embedding",
         dimensions: 768,    //this dimensions is for gemini
       }),
+
+      notes:defineTable({
+        fileId:v.string(),
+        notes:v.string(),
+        createdBy:v.string(),
+      })
 })
 

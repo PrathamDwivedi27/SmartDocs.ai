@@ -25,7 +25,7 @@ const Workspace = () => {
 
   return (
     <div>
-      <WorkspaceHeader />
+      <WorkspaceHeader fileName={fileInfo?.fileName}/>
 
       {isLoading ? (
         // Loader Component

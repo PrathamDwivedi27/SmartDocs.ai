@@ -17,7 +17,6 @@ import { Loader2Icon } from "lucide-react";
 import { api } from "@/convex/_generated/api";
 import uuid4 from "uuid4";
 import { useUser } from "@clerk/nextjs";
-import { getFileUrl } from "@/convex/fileStorage";
 import axios from "axios";
 
 const UploadPdfDialog = ({ children }) => {
