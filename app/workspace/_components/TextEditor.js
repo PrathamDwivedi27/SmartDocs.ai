@@ -43,21 +43,21 @@ const TextEditor = ({fileId}) => {
         
     }, [editor&&GetNotes]);
 
-    const handleSave = async () => {
-      try {
-        if (editor) {
-          await saveNotes({
-            fileId: fileId,
-            notes: editor.getHTML(),
-            createdBy: user?.primaryEmailAddress?.emailAddress,
-          });
-          alert('Notes saved successfully!');
-        }
-      } catch (error) {
-        console.error('Error saving notes:', error);
-        alert('Failed to save notes. Please try again.');
-      }
-    };
+    // const handleSave = async () => {
+    //   try {
+    //     if (editor) {
+    //       await saveNotes({
+    //         fileId: fileId,
+    //         notes: editor.getHTML(),
+    //         createdBy: user?.primaryEmailAddress?.emailAddress,
+    //       });
+    //       alert('Notes saved successfully!');
+    //     }
+    //   } catch (error) {
+    //     console.error('Error saving notes:', error);
+    //     alert('Failed to save notes. Please try again.');
+    //   }
+    // };
 
     // const fileInfo = useQuery(api.fileStorage.GetFileRecord, {
     //   fileId: fileId,

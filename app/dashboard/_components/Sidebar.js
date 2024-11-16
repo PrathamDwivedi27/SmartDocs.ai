@@ -1,6 +1,6 @@
 "use client"
 import Image from 'next/image'
-import React from 'react'
+import React, { use } from 'react'
 import { Button } from "@/components/ui/button";
 import { Progress } from "@/components/ui/progress";
 import { Layout, Shield } from 'lucide-react';
@@ -15,11 +15,14 @@ import Link from 'next/link';
 const Sidebar = () => {
   const {user}=useUser();
   const path=usePathname();
+  const GetUserInfo=useQuery(api.user.GetUserInfo,{
+    userEmail:user?.primaryEmailAddress?.emailAddress,
+  })
 
   const fileList=useQuery(api.fileStorage.GetUserFiles,{
     userEmail:user?.primaryEmailAddress?.emailAddress,
   })
-  // console.log(fileList);
+  // console.log("bsdk",GetUserInfo);
 
 
   return (
@@ -31,7 +34,7 @@ const Sidebar = () => {
         height={200}
       />
       <div className='mt-10'>
-        <UploadPdfDialog isMaxFile={fileList?.length>10?true:false}>
+        <UploadPdfDialog isMaxFile={fileList?.length>=5 && !GetUserInfo.upgrade?true:false}>
           <Button className='w-full'>+ Upload PDF</Button>
         </UploadPdfDialog>
         <Link href='/dashboard'>
@@ -48,11 +51,11 @@ const Sidebar = () => {
         </Link>
         
       </div>
-      <div className='absolute bottom-24 w-[80%]'>
-        <Progress value={(fileList?.length/10)*100} />
-        <p className='text-sm mt-1'>{fileList?.length} out of 10 PDFs Uploaded</p>
+      {!GetUserInfo?.upgrade&&<div className='absolute bottom-24 w-[80%]'>
+        <Progress value={(fileList?.length/5)*100} />
+        <p className='text-sm mt-1'>{fileList?.length} out of 5 PDFs Uploaded</p>
         <p className='text-sm text-gray-400 mt-2'>Upgrade to upload more PDFs</p>
-      </div>
+      </div>}
     </div>
   )
 }

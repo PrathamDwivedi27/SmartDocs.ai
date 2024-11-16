@@ -1,5 +1,6 @@
 import { mutation } from "./_generated/server";
 import {v} from "convex/values" 
+import {query} from "./_generated/server";
 //Mutation is used for creating, updating, or deleting data.
 
 export const createUser=mutation({
@@ -52,3 +53,20 @@ export const userUpgradePlan = mutation({
         }
     }
 });
+
+export const GetUserInfo=query({
+    args:{
+        userEmail:v.optional(v.string()),
+    },
+    handler:async(ctx,args)=>{
+        if(!args?.userEmail){
+            return null;
+        }
+        const result=await ctx.db.query('users')
+        .filter((q)=>q.eq(q.field('email'),args?.userEmail)).collect();
+        if(result.length===0){
+            return null;
+        }
+        return result[0];
+    }
+})
