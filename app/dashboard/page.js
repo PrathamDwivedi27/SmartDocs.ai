@@ -8,7 +8,9 @@ import Link from 'next/link';
 
 const Dashboard = () => {
   const {user}=useUser();
-
+  console.log("User object:", user);
+  console.log("User email:", user?.primaryEmailAddress?.emailAddress);
+  
   const fileList=useQuery(api.fileStorage.GetUserFiles,{
     userEmail:user?.primaryEmailAddress?.emailAddress,
   })
