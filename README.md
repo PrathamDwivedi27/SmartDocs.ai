@@ -77,4 +77,11 @@ Please ensure that your contributions follow our coding standards and are well-d
 
 ---
 
+---
+
+**Get Started Now!**  
+Visit [SmartDocs.AI](https://smart-docs-ai.vercel.app/) and start creating personalized stories for kids today.
+
+---
+
 **Smart Docs.AI** is continuously evolving, and we aim to provide the best user experience with the latest AI advancements. Thank you for exploring our project! 🎉
