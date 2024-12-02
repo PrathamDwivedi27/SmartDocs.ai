@@ -1,36 +1,80 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Smart Docs.AI: AI-Powered PDF Question Answering System
 
-## Getting Started
+**Smart Docs.AI** is an innovative platform that combines cutting-edge AI technologies to revolutionize how you interact with your documents. The app allows you to upload PDFs, tokenize their content, and extract meaningful insights using **Langchain** and **Gemini AI**. With real-time question answering capabilities, Smart Docs.AI transforms how you access and understand your documents.
 
-First, run the development server:
+## Key Features
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+### 🔐 **Authentication with Clerk**
+- Secure user login via **Clerk** authentication, ensuring a personalized and safe experience.  
+- Once logged in, you can easily upload and manage your PDFs.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+![Login Page](./images/Screenshot%202024-12-02%20183014.png)
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+### 📄 **Document Upload & AI Processing**
+- Upload your PDF files, and Smart Docs.AI utilizes **Langchain** to tokenize and create vector embeddings.  
+- These embeddings allow the system to understand the document’s content at a deeper level, enabling efficient question answering.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+![Upload Page](./images/Screenshot%202024-12-02%20183043.png)
 
-## Learn More
+### 📝 **Advanced PDF Editing Features**
+- Highlight text, make notes bold, and adjust alignment directly within the PDF document.  
+- The system allows you to format your document for a better user experience.
 
-To learn more about Next.js, take a look at the following resources:
+![PDF Page](./images/Screenshot%202024-12-02%20185911.png)
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+### 🤖 **AI-Powered Question Answering**
+- Ask questions based on the uploaded PDF, and **Gemini AI** will analyze the content and provide relevant answers.  
+- The AI system also includes a **summarizer**, which gives a concise summary of the document.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+![PDF Page](./images/Screenshot%202024-12-02%20185655.png)
 
-## Deploy on Vercel
+### 💳 **PayPal Integration**
+- For **lifetime access** and unlimited uploads, you can integrate **PayPal** to purchase a premium subscription.  
+- Enjoy full access to Smart Docs.AI for a one-time payment.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+![PayPal Integration](./images/Screenshot%202024-12-02%20190126.png)
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+### 🏷️ **Pricing and Free Tier**
+- The **free tier** allows you to upload up to **5 PDFs**.  
+- For **premium** access, you can use **PayPal** to unlock lifetime access with unlimited PDF uploads.
+
+### 💾 **Save Documents (Future Scope)**
+- Currently, documents are not saved unless the **Gemini AI** feature is used.  
+- This feature is in development to enable saving documents for future reference and continued interaction.
+
+### 🚀 **Future Scope**
+- Enhancements are underway for better document-saving capabilities.  
+- More powerful AI models and improved embedding quality will be integrated to provide highly accurate answers.  
+- Additional functionalities like question suggestion.
+
+## Tech Stack
+
+- **UI:** Next.js
+- **Styling:** Tailwind CSS
+- **AI & Embedding:** Langchain, Gemini
+- **Database:** MongoDB
+- **Payment Integration:** PayPal
+- **Authentication:** Clerk
+
+## Langchain's Role in the Project
+
+In **Smart Docs.AI**, **Langchain** is responsible for tokenizing the content of uploaded PDF documents and creating vector embeddings. These embeddings transform the document’s text into numerical representations that are more easily understood by the AI. This allows **Gemini AI** to quickly process the content and answer user questions based on the document. Langchain makes the entire process of handling and embedding document data seamless, enabling more effective and accurate question-answering capabilities.
+
+## Contributing
+
+We welcome contributions to improve **Smart Docs.AI**! To contribute:
+
+1. Fork the repository
+2. Create a new branch
+3. Make your changes
+4. Submit a pull request
+
+Please ensure that your contributions follow our coding standards and are well-documented.
+
+## Acknowledgments
+
+@Sharad117 for constant guidance and doubt support 😃
+
+---
+
+**Smart Docs.AI** is continuously evolving, and we aim to provide the best user experience with the latest AI advancements. Thank you for exploring our project! 🎉
