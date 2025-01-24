@@ -80,7 +80,7 @@ Please ensure that your contributions follow our coding standards and are well-d
 ---
 
 **Get Started Now!**  
-Visit [SmartDocs.AI](https://smart-docs-ai.vercel.app/) and start creating personalized stories for kids today.
+Visit [SmartDocs.AI](https://smart-docs-ai.vercel.app/).
 
 ---
 
